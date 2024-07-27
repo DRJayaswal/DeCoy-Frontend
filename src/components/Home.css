@@ -1,0 +1,26 @@
+.landing-page{
+    margin: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.landing-heading{
+    font-size: 450%;
+}
+.landing-para{
+    font-weight: 400;
+}
+.landing-logo{
+    width: 300px;
+    border-radius: 50%;
+    filter: contrast(0.94);
+    transition: all .35s ease-in-out;
+}
+.logo-con{
+    display: flex;
+    justify-content: center;
+}
+.landing-logo:hover{
+    transform: scale(1.125);
+}
