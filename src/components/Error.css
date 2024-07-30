@@ -1,0 +1,9 @@
+.error-container{
+    margin: 40px 100px 40px 100px;
+    font-size: 400%;
+    display: flex;
+    justify-content: space-around;
+}
+.route{
+    color: var(--3);
+}

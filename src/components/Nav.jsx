@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap";
 import "./Nav.css";
 const Nav = () => {
   const [fullscreenSupported, setFullscreenSupported] = useState(true);
+  const [menu, setMenu] = useState(false);
+
+
+
+
+
+
+
+
+
+
+
+
   const [isFullscreen, setIsFullscreen] = useState(false);
   const handleFullscreen = () => {
     const elem = document.documentElement;
@@ -42,59 +56,74 @@ const Nav = () => {
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
+            onClick={()=>{
+              setMenu(!menu)
+            }}
             aria-label="Toggle navigation"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="48px"
-              viewBox="0 -960 960 960"
-              width="48px"
-              fill="#f46004"
-            >
-              <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-            </svg>
-            {/* <svg
-              className="navbar-toggler-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              height="50px"
-              viewBox="0 -960 960 960"
-              width="50px"
-              fill="#f46004"
-            >
-              <path d="M120-240v-80h520v80H120Zm664-40L584-480l200-200 56 56-144 144 144 144-56 56ZM120-440v-80h400v80H120Zm0-200v-80h520v80H120Z" />
-            </svg> */}
+            {
+              (menu) ? (
+                <svg
+                  className="navbar-toggler-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="50px"
+                  viewBox="0 -960 960 960"
+                  width="50px"
+                  fill="#f46004"
+                >
+                  <path d="M120-240v-80h520v80H120Zm664-40L584-480l200-200 56 56-144 144 144 144-56 56ZM120-440v-80h400v80H120Zm0-200v-80h520v80H120Z" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="48px"
+                  viewBox="0 -960 960 960"
+                  width="48px"
+                  fill="#f46004"
+                >
+                  <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+                </svg>
+              )
+            }
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
               <li className="nav-item">
-                <span className="nav-link" href="#">
+                <Link className="home nav-link" to={"/"}>
+                  DeCoy
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to={"/jukebox"}>
                   Jukebox
-                </span>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to={"/archives"}>
                   Archives
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to={"/records"}>
                   Records
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to={"/locale"}>
                   Locale
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Discover new music...!!"
+                placeholder="Discover your music...!!"
                 aria-label="Search"
               />
               <button className="btn search-btn" type="submit">

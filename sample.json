@@ -1,0 +1,55 @@
+{
+    "albums": {
+        "href": "https://api.spotify.com/v1/search?query=shubh&type=album&locale=en-GB%2Cen&offset=0&limit=5",
+        "items": [
+            {
+                "album_type": "single",
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/1fo9RX1KLaThWaxhhzFDpl"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/1fo9RX1KLaThWaxhhzFDpl",
+                        "id": "1fo9RX1KLaThWaxhhzFDpl",
+                        "name": "Glowyon",
+                        "type": "artist",
+                        "uri": "spotify:artist:1fo9RX1KLaThWaxhhzFDpl"
+                    }
+                ],
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/album/3p2u4VNeEh8aU8zM1lDiIz"
+                },
+                "href": "https://api.spotify.com/v1/albums/3p2u4VNeEh8aU8zM1lDiIz",
+                "id": "3p2u4VNeEh8aU8zM1lDiIz",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b27305ef59c714f56f5c4affe46e",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e0205ef59c714f56f5c4affe46e",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d0000485105ef59c714f56f5c4affe46e",
+                        "width": 64
+                    }
+                ],
+                "name": "Shubh",
+                "release_date": "2023-01-17",
+                "release_date_precision": "day",
+                "total_tracks": 1,
+                "type": "album",
+                "uri": "spotify:album:3p2u4VNeEh8aU8zM1lDiIz"
+            }
+        ],
+        "limit": 5,
+        "next": "https://api.spotify.com/v1/search?query=shubh&type=album&locale=en-GB%2Cen&offset=5&limit=5",
+        "offset": 0,
+        "previous": null,
+        "total": 103
+    }
+}

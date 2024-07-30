@@ -5,7 +5,9 @@ const Foot = () => {
     <div className="bottom">
       <div className="footer">
         <div className="footer-logo">
-          <img className="ft-logo" src="/logo.png" alt="" />
+          <h1 className="record">
+            DeCoy™ aka <span className="dc">DC™</span>
+          </h1>
         </div>
 
         <div className="helpline-content">Contact Us : ask@decoy.in</div>
