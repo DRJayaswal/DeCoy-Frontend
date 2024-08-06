@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Records.css';
 import { getSpotifyToken } from '../spotifyToken';
@@ -6,13 +6,10 @@ import { getSpotifyToken } from '../spotifyToken';
 const Records = () => {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [currentTime, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
-    const [searchType, setSearchType] = useState('playlist');
-    const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+    const [searchType, setSearchType] = useState('track');
     const [currentTrackUrl, setCurrentTrackUrl] = useState('');
     const [limit, setLimit] = useState(5)
     const [sq, setSQ] = useState(false)
@@ -36,7 +33,7 @@ const Records = () => {
         const token = await getSpotifyToken();
 
         if (!token) {
-            setError('Failed to get Spotify token');
+            console.error('Failed to get Spotify token');
             return;
         }
 
@@ -79,13 +76,7 @@ const Records = () => {
         setIsPlaying(!isPlaying);
     };
 
-    const handleTimeUpdate = () => {
-        setCurrentTime(audioRef.current.currentTime);
-    };
 
-    const handleLoadedMetadata = () => {
-        setDuration(audioRef.current.duration);
-    };
     const handleVolumeChange = (event) => {
         audioRef.current.volume = event.target.value;
         setVolume(event.target.value);
@@ -307,8 +298,6 @@ const Records = () => {
             </>            <audio
                 ref={audioRef}
                 src={currentTrackUrl}
-                onTimeUpdate={handleTimeUpdate}
-                onLoadedMetadata={handleLoadedMetadata}
                 className="track-audio"
                 style={{ display: 'none' }}
             />
